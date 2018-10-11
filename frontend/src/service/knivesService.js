@@ -1,6 +1,12 @@
 import axios from "axios";
 
+// let KNIVES_URL = "http://localhost:3000/data/knives";
+
 let KNIVES_URL = "http://localhost:3000/data/knives";
+
+if (process.env.NODE_ENV !== "development") {
+  KNIVES_URL = "/data/knives";
+}
 
 function getKnives(filter = null) {
   return axios
