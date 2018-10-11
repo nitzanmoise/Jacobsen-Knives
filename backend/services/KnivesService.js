@@ -1,5 +1,6 @@
 const mongo = require("mongodb");
 var DBService = require("./DBService");
+var mandrill = require("node-mandrill")("aiaICqG25A8YWc9HlSMCIA");
 
 function query(knives) {
   return new Promise((resolve, reject) => {
@@ -35,7 +36,28 @@ function getById(knifeId) {
   });
 }
 
+function sendEmail(_name, _email, _subject, _message) {
+  mandrill(
+    "/messages/send",
+    {
+      message: {
+        to: [{ email: "nitzanmois@gmail.com", name: "Jim Rubenstein" }],
+        from_email: _email,
+        subject: _subject,
+        text: _message
+      }
+    },
+    function(error, response) {
+      //uh oh, there was an error
+      if (error) console.log(JSON.stringify(error));
+      //everything's good, lets see what mandrill said
+      else console.log(response, "sucsses!");
+    }
+  );
+}
+
 module.exports = {
   query,
-  getById
+  getById,
+  sendEmail
 };

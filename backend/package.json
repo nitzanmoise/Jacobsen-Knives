@@ -10,11 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.18.3",
     "client-sessions": "^0.8.0",
+    "cloudinary": "^1.11.0",
+    "connect-multiparty": "^2.2.0",
     "cors": "^2.8.4",
-    "express": "^4.10.2",
+    "express": "^4.16.3",
+    "mandrill-api": "^1.0.45",
     "mongodb": "^2.2.33",
+    "node-mandrill": "^1.0.1",
     "socket.io": "^1.7.2"
   }
 }

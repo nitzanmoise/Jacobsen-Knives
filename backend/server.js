@@ -1,6 +1,8 @@
 var express = require("express");
 var cors = require("cors");
 var app = express();
+const multipart = require("connect-multiparty");
+const cloudinary = require("cloudinary");
 
 var corsOptions = {
   origin: [/http:\/\/127.0.0.1:\d+/, "http://localhost:8080"],
@@ -8,6 +10,13 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+// app.use(bodyParser.urlencoded({ extended: false }));
+
+cloudinary.config({
+  cloud_name: "dk0zkqt8b",
+  api_key: "487379261981642",
+  api_secret: "-k30BX1MyqJARHQP-ixIbGFOysI"
+});
 
 var http = require("http").Server(app);
 var bodyParser = require("body-parser");
@@ -16,8 +25,7 @@ const clientSessions = require("client-sessions");
 var KnivesService = require("./services/KnivesService");
 var SocketService = require("./services/SocketService");
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(express.static('front'));
 
 app.use(

@@ -19,8 +19,6 @@ export default new Vuex.Store({
       state.selectedKnife = knife;
     },
     setknives(state, { knives }) {
-      console.log(knives);
-
       state.knives = knives;
     }
   },

@@ -3,5 +3,36 @@ body {
   margin: 0;
 }
 html {
+  font: normal "Helvetica Neue", Arial, sans-serif;
   margin: 0;
 }
+/* /********************* Animations /********************** */
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+.animated {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/************************* fonts /************************/
