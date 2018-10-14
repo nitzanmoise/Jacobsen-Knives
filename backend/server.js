@@ -9,6 +9,8 @@ var corsOptions = {
   credentials: true
 };
 
+// const PORT = process.env.PORT || 3000;
+
 app.use(cors(corsOptions));
 // app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -53,3 +55,4 @@ addKnivesRoutes(app);
 http.listen(3000, () => {
   console.log("listening on *:3000");
 });
+// app.listen​(PORT, () => console​.log​(`Example  app  listening  on  port${PORT}!`));
